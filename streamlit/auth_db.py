@@ -1,15 +1,16 @@
 import mysql.connector
 import streamlit as st
 
-# ✅ Correct: Load the [mysql] group from secrets
+# Load MySQL secrets
 secrets = st.secrets["mysql"]
 
-# ✅ Access each key inside the group
+# Connect to Railway-hosted MySQL
 conn = mysql.connector.connect(
-    host=secrets["host"],         # example: "127.0.0.1" or cloud host
-    user=secrets["user"],         # example: "root"
-    password=secrets["password"], # example: "cseds@32"
-    database=secrets["database"]  # example: "project2"
+    host=secrets["host"],
+    port=int(secrets["port"]),  # Ensure port is treated as integer
+    user=secrets["user"],
+    password=secrets["password"],
+    database=secrets["database"]
 )
 
 csr = conn.cursor()
