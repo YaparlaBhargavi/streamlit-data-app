@@ -20,21 +20,23 @@ if btn:
     if username == "" or full_name == "" or phone == "" or email == "" or passwordd == "" or conform_pass == "":
         st.error("Please fill up all the fields.")
         st.snow()
+    elif passwordd != conform_pass:
+        st.warning("Passwords do not match.")
+        st.snow()
     else:
-        if passwordd != conform_pass:
-            st.warning("Passwords do not match.")
-            st.snow()
-        else:
-            try:
-                csr.execute(f"insert into signup_us(username,full_name,phone,email,passwordd) values('{username}','{full_name}','{phone}','{email}','{passwordd}')")
-                conn.commit()
-                st.success("Account created successfully")
-                st.balloons()
+        try:
+            # ✅ Use parameterized query
+            csr.execute(
+                "INSERT INTO signup_us (username, full_name, phone, email, passwordd) VALUES (%s, %s, %s, %s, %s)",
+                (username, full_name, phone, email, passwordd)
+            )
+            conn.commit()
+            st.success("Account created successfully!")
+            st.balloons()
 
-                # ✅ Correct Login Page Link
-                st.markdown('<a href="./Login" target="_self">Click here to Login</a>', unsafe_allow_html=True)
+            # ✅ Correct Login Page Link
+            st.markdown('<a href="./Login" target="_self">Click here to Login</a>', unsafe_allow_html=True)
 
-            except Exception:
-                st.error("Please check — username must be unique or check database structure!")
-  
-
+        except Exception as e:
+            st.error("Signup failed — username must be unique or database issue.")
+            st.exception(e)
