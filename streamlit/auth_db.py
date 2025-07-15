@@ -1,16 +1,15 @@
 import mysql.connector
 import streamlit as st
 
-# ✅ Fetch credentials from secrets
+# ✅ Correct: Load the [mysql] group from secrets
 secrets = st.secrets["mysql"]
 
-# ✅ Create database connection
+# ✅ Access each key inside the group
 conn = mysql.connector.connect(
-    host=secrets["host"],
-    user=secrets["user"],
-    password=secrets["cseds@32"],
-    database=secrets["project2"]
+    host=secrets["host"],         # example: "127.0.0.1" or cloud host
+    user=secrets["user"],         # example: "root"
+    password=secrets["password"], # example: "cseds@32"
+    database=secrets["database"]  # example: "project2"
 )
 
-# ✅ Create cursor
 csr = conn.cursor()
