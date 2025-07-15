@@ -26,7 +26,7 @@ if btn:
             st.snow()
         else:
             try:
-                csr.execute(f"insert into signup_use(username,full_name,phone,email,passwordd) values('{username}','{full_name}','{phone}','{email}','{passwordd}')")
+                csr.execute(f"insert into signup_us(username,full_name,phone,email,passwordd) values('{username}','{full_name}','{phone}','{email}','{passwordd}')")
                 conn.commit()
                 st.success("Account created successfully")
                 st.balloons()
