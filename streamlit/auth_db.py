@@ -6,7 +6,7 @@ secrets = st.secrets["mysql"]
 
 # ✅ Create database connection
 conn = mysql.connector.connect(
-    host=secrets["localhost"],
+    host=secrets["host"],
     user=secrets["root"],
     password=secrets["cseds@32"],
     database=secrets["project2"]
