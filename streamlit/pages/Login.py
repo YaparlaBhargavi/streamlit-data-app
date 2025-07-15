@@ -27,14 +27,3 @@ if btn:
                 st.balloons()
                 st.write(f"Welcome, **{check_username[1]}**")  # full_name
                  
-st.markdown(
-    """
-    <style>
-    .stApp {
-        background-image: url("https://wallpapercrafter.com/desktop1/518541-abstract-backgrounds-full-frame-green-color-no.jpg");
-        background-size: cover;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-) 
