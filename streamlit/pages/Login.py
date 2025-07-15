@@ -13,7 +13,7 @@ if btn:
         st.snow()
     else:
         # ✅ Use parameterized query to avoid SQL injection
-        csr.execute("SELECT * FROM signup_use WHERE username = %s", (username,))
+        csr.execute("SELECT * FROM signup_us WHERE username = %s", (username,))
         check_username = csr.fetchone()
 
         if check_username is None:
