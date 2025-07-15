@@ -37,14 +37,4 @@ if btn:
             except Exception:
                 st.error("Please check — username must be unique or check database structure!")
   
-st.markdown(
-    """
-    <style>
-    .stApp {
-        background-image: url("https://wallpapercrafter.com/desktop1/518541-abstract-backgrounds-full-frame-green-color-no.jpg");
-        background-size: cover;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+
