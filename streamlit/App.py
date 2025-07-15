@@ -22,14 +22,3 @@ if my_file is not None:
         st.success("File uploaded and read successfully!")
         st.subheader("Preview of Uploaded Data")
         st.dataframe(df)
-st.markdown(
-    """
-    <style>
-    .stApp {
-        background-image: url("https://wallpapercrafter.com/desktop1/518541-abstract-backgrounds-full-frame-green-color-no.jpg");
-        background-size: cover;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
