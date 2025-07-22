@@ -14,6 +14,7 @@
 - 📊 View uploaded data in a table
 - 🎨 Clean UI with background image styling
 
+---
 
 ## 📁 Project Structure
 
